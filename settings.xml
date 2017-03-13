@@ -1,0 +1,72 @@
+<settings>
+	<servers>
+		<server>
+			<id>nusatrip</id>
+			<username>{username}</username>
+			<password>{encrypted password}</password>
+		</server>
+		<server>
+			<id>nusatrip.snapshots</id>
+			<username>{username}</username>
+			<password>{encrypted password}</password>
+		</server>
+		<server>
+			<id>nusatrip.public</id>
+			<username>{username}</username>
+			<password>{encrypted password}</password>
+		</server>
+	</servers>
+
+	<mirrors>
+		<mirror>
+			<id>nusatrip.central</id>
+			<name>Nusatrip Central</name>
+			<url>http://maven.nusatrip.com/repository/public/</url>
+			<mirrorOf>external:central</mirrorOf>
+		</mirror>
+	</mirrors>
+
+	<profiles>
+		<profile>
+			<id>default</id>
+			<repositories>
+				<repository>
+					<id>nusatrip.public</id>
+					<name>Nusatrip</name>
+					<url>http://maven.nusatrip.com/repository/public/</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>nusatrip</id>
+					<name>Nusatrip</name>
+					<url>http://maven.nusatrip.com/repository/releases/</url>
+					<releases>
+						<enabled>true</enabled>
+					</releases>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>nusatrip.snapshots</id>
+					<name>Nusatrip</name>
+					<url>http://maven.nusatrip.com/repository/snapshots/</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
+	<activeProfiles>
+		<activeProfile>default</activeProfile>
+	</activeProfiles>
+</settings>
